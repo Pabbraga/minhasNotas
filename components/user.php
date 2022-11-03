@@ -1,8 +1,12 @@
 <?php
+
 class User {
 
-    private string $email = 'etec@email.com';
-    private string $password = 'etec';
+    private $email;
+    private $password;
+    private $name;
+    private $age;
+    private $cpf;
     
     public function getEmail() {
         return $this->email;
@@ -10,5 +14,18 @@ class User {
     
     public function getPassword() {
         return $this->password;
-    } 
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getAge() {
+        return $this->age;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+
 }

@@ -3,6 +3,7 @@
 require_once '../components/post.php';
 require_once '../components/user.php';
 require_once '../components/session.php';
+require_once '../script/userdata.php';
 
 $session = new Session();
 $post = new Post();
