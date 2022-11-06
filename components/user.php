@@ -7,6 +7,7 @@ class User {
     private $name;
     private $age;
     private $cpf;
+    private $picture;
     
     public function getEmail() {
         return $this->email;
@@ -28,4 +29,31 @@ class User {
         return $this->cpf;
     }
 
+    public function getPicture(){
+        return $this->picture;
+    }
+
+    public function setEmail($v) {
+        $this->email = $v;
+    }
+    
+    public function setPassword($v) {
+        $this->password = $v;
+    }
+
+    public function setName($v) {
+        $this->name = $v;
+    }
+
+    public function setAge($v) {
+        $this->age = $v;
+    }
+
+    public function setCpf($v) {
+        $this->cpf = $v;
+    }
+
+    public function setPicture($v){
+        $this->picture = $v;
+    }
 }

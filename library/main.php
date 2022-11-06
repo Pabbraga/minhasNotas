@@ -1,3 +1,7 @@
+<?php
+require_once '../script/login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,11 +11,11 @@
     <title>Perfil</title>
 </head>
 <body>
-    <section><img src="" alt=""></section>
+    <section><img src="<?php echo $user->getPicture(); ?>" alt=""></section>
     <section>
-        <p>Nome: </p>
-        <p>E-mail: </p>
-        <p>CPF: </p>
+        <p>Nome: <?php echo $user->getName(); ?></p>
+        <p>E-mail: <?php echo $user->getEmail(); ?></p>
+        <p>CPF: <?php echo $user->getCpf(); ?></p>
     </section>
     <section>
         <form action="" method="post">
