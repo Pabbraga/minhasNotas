@@ -9,7 +9,7 @@ $session = new Session();
 $post = new Post();
 $user = new User();
 
-if(isset($_POST['email']) && isset($_POST['password'])) {
+if(isset($_POST['email']) && isset($_POST['password']) && $_POST['email'] != '' && $_POST['password'] != '') {
     $email = $post->get('email');
     $pass = $post->get('password');
 
