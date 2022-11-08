@@ -29,8 +29,9 @@ p {
 }
 input[type=password], [type=email] {
     margin: 15px;
-    font-size: 1.2em;
-    padding: 5px;
+    font-size: 0.8em;
+    padding: 10px;
+    width: 300px;
     border: none;
     border-radius: 5px;
 }
@@ -57,6 +58,8 @@ section > h1 {
 .notes {
     width: fit-content;
     height: fit-content;
-    padding: 10px;
+    margin: 250px auto;
+    padding: 30px;
     background-color: white;
+    border-radius: 10px;
 }
