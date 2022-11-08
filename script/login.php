@@ -25,7 +25,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 
     if($email == $user->getEmail() && $pass == $user->getPassword()) {
         $_SESSION['user'] = $user->getEmail();
-        include '../library/main.php';
+        include '../pages/main.php';
     } else {
         echo 'dados incorretos e/ou inválidos!';
     }

@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color1: ;
+    --color2: ;
+} 
+.container {
+    display: flex;  
+    justify-content: center;
+}
+.form {
+    width: fit-content;
+    padding: 10px 25px;
+    margin-top: 5%;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+    background-color: var(--color1);
+    box-shadow: 3px 3px 8px black;
+}
+input[type=password], [type=email] {
+    margin: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+section > h1 {
+    margin: 0 auto;
+}
+.button {
+    font-size: 1em;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 75%;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: var(--color2);
+    opacity: 0.9;
+    transition: 0.3ms;
+}
+.button:hover {
+    opacity: 1;
+}
+/* https://coolors.co/9aa0a8-a7c4b5-a9d8b8-beffc7-72705b */
