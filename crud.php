@@ -3,9 +3,9 @@ $user = 'root';
 $pass = 'etec';
 
 $userData = [
-    'name'=>'Lúcia Giovanna', 
-    'email'=>'luciagiovanna032@hotmail.com', 
-    'password'=>'lucia123', 
+    'name'=>'Pedro', 
+    'email'=>'pedro@email.com', 
+    'password'=>'pedro123', 
 ];
 
 $dbh = new PDO('mysql:host=localhost;dbname=pw', $user, $pass);
@@ -30,7 +30,7 @@ var_dump($users);
 echo "</pre>";
 
 //update
-$alterName = "Joana";
+$alterName = "João";
 $id = 2;
 $statement = $dbh->prepare("UPDATE user SET name = :name WHERE id = :id");
 
