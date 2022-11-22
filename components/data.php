@@ -33,6 +33,8 @@ class Data{
 
         $statement->bindParam(':id', $id);
         $statement->bindParam(":{$column}", $update);
+
+        $statement->execute();
     }
 
     public function deleteData($id) {
@@ -45,6 +47,6 @@ class Data{
 
 $dt = new Data('root', 'etec');
 #$dt->insertData('Paulo', 'paulo@email.com', 'paulo123');
-#$dt->updateData('name', 3 ,'Claudio');
+#$dt->updateData('name', 2 ,'Claudio');
 #$dt->deleteData(3);
 print_r($dt->selectData('user'));
