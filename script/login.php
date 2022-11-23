@@ -3,28 +3,27 @@
 require_once '../components/post.php';
 require_once '../components/user.php';
 require_once '../components/session.php';
-require_once '../components/data.php';
+require_once '../components/database.php';
+require './config.php';
 
 $session = new Session();
 $post = new Post();
 $user = new User();
-$dt = new Data('root', 'etec');
+$dt = new DataBase($config);
 
 if(isset($_POST['email']) && isset($_POST['password']) && $_POST['email'] != '' && $_POST['password'] != '') {
     $email = $post->get('email');
     $pass = $post->get('password');
 
-
-    foreach($dt as $data) {
-        if($email == $data['email'] && $pass == $data['password']){
-            $user->setName($data['name']);
-            $user->setCpf($data['cpf']);
-            $user->setEmail($data['email']);
-            $user->setPassword($data['password']);
-            $user->setPicture($data['picture']);
-        }
+    $userData = $dt->selectData('user');
+    if($email == $userData['email'] && $pass == $userData['password']){
+        $user->setName($userData['name']);
+        $user->setCpf($userData['cpf']);
+        $user->setEmail($userData['email']);
+        $user->setPassword($userData['password']);
+        $user->setPicture($userData['picture']);
     }
-
+    
     if($email == $user->getEmail() && $pass == $user->getPassword()) {
         $_SESSION['user'] = $user->getEmail();
         include '../pages/main.php';

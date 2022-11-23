@@ -1,11 +1,11 @@
 <?php
 
-class Data{
+class DataBase{
 
     private $connection;
 
-    public function __construct($user, $pass) {
-        $this->connection = new PDO('mysql:host=localhost;dbname=pw', $user, $pass);
+    public function __construct($config) {
+        $this->connection = new PDO($config['driver'] . ':host='. $config['host'] .';dbname=' . $config['db'], $config['user'], $config['password']);
     }
 
     public function dispatch() {
@@ -63,9 +63,3 @@ class Data{
         $statement->execute();
     }
 }
-
-#$dt = new Data('root', 'etec');
-#$dt->insertData('Lúcia Giovanna', '26021609034', 'luciagiovanna032@hotmail.com', 'lucia123', '../assets/jovem-f.png');
-#$dt->updateData('password', 2 ,'claudio123');
-#$dt->deleteData(3);
-#print_r($dt->selectData('user'));
