@@ -3,17 +3,19 @@
 require_once '../components/post.php';
 require_once '../components/user.php';
 require_once '../components/session.php';
-require_once '../script/userdata.php';
+require_once '../components/data.php';
 
 $session = new Session();
 $post = new Post();
 $user = new User();
+$dt = new Data('root', 'etec');
 
 if(isset($_POST['email']) && isset($_POST['password']) && $_POST['email'] != '' && $_POST['password'] != '') {
     $email = $post->get('email');
     $pass = $post->get('password');
 
-    foreach($users_data as $data) {
+
+    foreach($dt as $data) {
         if($email == $data['email'] && $pass == $data['password']){
             $user->setName($data['name']);
             $user->setCpf($data['cpf']);
