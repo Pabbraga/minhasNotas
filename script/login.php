@@ -9,14 +9,17 @@ require './config.php';
 $session = new Session();
 $post = new Post();
 $user = new User();
-$dt = new DataBase($config);
+$dt = new DataBase($_config);
 
 if(isset($_POST['email']) && isset($_POST['password']) && $_POST['email'] != '' && $_POST['password'] != '') {
     $email = $post->get('email');
     $pass = $post->get('password');
 
-    $userData = $dt->selectData('user');
-    if($email == $userData['email'] && $pass == $userData['password']){
+    $usersData = $dt->selectData('user');
+    foreach($usersData as $Data) {
+        $userData = $Data;
+    }
+    if($email == $Data['email'] && $pass == $Data['password']) {
         $user->setName($userData['name']);
         $user->setCpf($userData['cpf']);
         $user->setEmail($userData['email']);
