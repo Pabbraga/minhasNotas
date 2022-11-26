@@ -4,8 +4,8 @@ $_config = [
     'db' => [
         'driver' => 'mysql',
         'host' => 'localhost',
-        'db' => 'pw',
+        'dbase' => 'pw',
         'user' => 'root',
-        'password' => 'etec',
+        'password' => 'pablo',
     ],
 ];

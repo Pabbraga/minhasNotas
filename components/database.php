@@ -5,7 +5,7 @@ class DataBase{
     private $connection;
 
     public function __construct($config) {
-        $this->connection = new PDO($config['db']['driver'] . ':host='. $config['db']['host'] .';dbname=' . $config['db']['db'], $config['db']['user'], $config['db']['password']);
+        $this->connection = new PDO($config['db']['driver'] . ':host='. $config['db']['host'] .';dbname=' . $config['db']['dbase'], $config['db']['user'], $config['db']['password']);
     }
 
     public function dispatch() {
